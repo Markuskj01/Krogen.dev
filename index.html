@@ -4,81 +4,384 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Markus Krogen Jensen | krogen.dev</title>
-  <meta name="description" content="Cybernetics & Robotics student at NTNU." />
+  <meta name="description" content="Cybernetics & Robotics @ NTNU. Building intelligent systems combining control, software and hardware." />
+  <meta name="theme-color" content="#0b0f17" />
 
   <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      margin: 0;
-      background: #ffffff;
-      color: #111;
+    :root{
+      --bg: #070a10;
+      --bg2:#0b1020;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --border: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --muted2: rgba(255,255,255,.55);
+      --accent: rgba(120,180,255,.95);
+      --shadow: 0 16px 50px rgba(0,0,0,.45);
+      --radius: 18px;
     }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 18% 12%, rgba(120,180,255,.16), transparent 60%),
+        radial-gradient(700px 450px at 78% 18%, rgba(180,120,255,.14), transparent 60%),
+        radial-gradient(900px 600px at 55% 85%, rgba(120,255,210,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.9}
 
-    .container {
-      max-width: 800px;
+    .wrap{
+      max-width: 980px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 28px 18px 70px;
     }
 
-    h1 {
-      font-size: 40px;
-      margin-bottom: 8px;
+    /* Top bar */
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 10px 6px 22px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:650;
+      letter-spacing:.2px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 20px rgba(120,180,255,.55);
+    }
+    nav{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      padding:8px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      color: var(--text);
+      border-color: rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
     }
 
-    .subtitle {
-      color: #666;
-      margin-bottom: 30px;
+    /* Hero */
+    .hero{
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      border-radius: calc(var(--radius) + 8px);
+      box-shadow: var(--shadow);
+      padding: 34px 26px;
+      position:relative;
+      overflow:hidden;
     }
-
-    .card {
-      border: 1px solid #e5e5e5;
-      padding: 20px;
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(500px 220px at 20% 10%, rgba(120,180,255,.18), transparent 60%),
+        radial-gradient(520px 260px at 80% 20%, rgba(180,120,255,.14), transparent 60%);
+      pointer-events:none;
+      filter: blur(0px);
+      opacity:.9;
+    }
+    .hero > *{position:relative}
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing:.2px;
+    }
+    .kicker .pill{
+      padding:2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.82);
+      font-weight:600;
+    }
+    h1{
+      margin: 16px 0 10px;
+      font-size: 44px;
+      line-height: 1.06;
+      letter-spacing: -.8px;
+    }
+    .sub{
+      margin: 0 0 18px;
+      max-width: 68ch;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 16.5px;
+    }
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top: 6px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
       border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.92);
+      transition: transform .08s ease, background .18s ease;
+      user-select:none;
+    }
+    .btn:hover{background: rgba(255,255,255,.09)}
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{
+      border-color: rgba(120,180,255,.35);
+      background: rgba(120,180,255,.12);
+    }
+    .btn .icon{
+      width:18px;height:18px;opacity:.9
+    }
+
+    /* Sections */
+    section{margin-top: 26px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+    }
+    .card{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,.28);
+      backdrop-filter: blur(10px);
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .muted{color: var(--muted)}
+    .small{color: var(--muted2); font-size: 14px; line-height:1.6}
+
+    /* Projects list */
+    .projects{display:grid; gap:12px}
+    .proj{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+    }
+    .proj .title{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom:6px;
+      font-weight:650;
+    }
+    .tag{
+      font-size:12px;
+      padding:4px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.72);
+      background: rgba(0,0,0,.18);
+      white-space:nowrap;
+    }
+
+    /* CV */
+    .cv{display:grid; gap:12px}
+    .row{
+      display:flex; justify-content:space-between; gap:14px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .row:first-child{border-top:none; padding-top:0}
+    .row .left{font-weight:600}
+    .row .right{color: var(--muted); text-align:right}
+
+    footer{
       margin-top: 30px;
+      padding: 18px 8px 0;
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
     }
 
-    a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 60px;
-      color: #888;
-      font-size: 14px;
+    @media (max-width: 860px){
+      h1{font-size: 38px}
+      .grid{grid-template-columns: 1fr}
+      nav{justify-content:flex-start}
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>Markus Krogen Jensen</h1>
-    <div class="subtitle">
-      Cybernetics & Robotics (Automation & Intelligent Systems) @ NTNU
+  <div class="wrap">
+    <div class="top">
+      <div class="brand"><span class="dot"></span> krogen.dev</div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
 
-    <p>
-      I build systems combining control theory, software and hardware.
-      Currently working on a Raspberry Pi sensor platform with a private dashboard.
-    </p>
+    <header class="hero" id="top">
+      <div class="kicker">
+        <span class="pill">Cybernetics & Robotics</span>
+        <span>Automation & Intelligent Systems @ NTNU</span>
+      </div>
 
-    <div class="card">
-      <h2>Projects</h2>
-      <ul>
-        <li>Water tank control system (valve + frequency converter)</li>
-        <li>Multi-threaded Python counter simulation</li>
-        <li>Heart rate measurement comparison experiment</li>
-      </ul>
-    </div>
+      <h1>Markus Krogen Jensen</h1>
+      <p class="sub">
+        I build practical systems that combine control theory, software and hardware.
+        Interested in automation, robotics, and reliable engineering.
+      </p>
+
+      <div class="cta">
+        <a class="btn primary" href="#projects" aria-label="Go to projects">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          View projects
+        </a>
+        <a class="btn" href="#cv" aria-label="Go to CV">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M7 7h10M7 12h10M7 17h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          CV snapshot
+        </a>
+        <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M9 19c-4 1.5-4-2.5-5-3m10 6v-3.87c0-1.1.1-1.73-.52-2.38 1.72-.2 3.53-.85 3.53-3.83 0-.85-.3-1.55-.8-2.1.08-.2.35-1.02-.08-2.12 0 0-.65-.2-2.15.8-.62-.17-1.28-.26-1.94-.26-.66 0-1.32.09-1.94.26-1.5-1-2.15-.8-2.15-.8-.43 1.1-.16 1.92-.08 2.12-.5.55-.8 1.25-.8 2.1 0 2.98 1.81 3.63 3.53 3.83-.42.36-.55.85-.55 1.73V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>About</h2>
+        <p class="muted" style="margin:0;">
+          Student in cybernetics and robotics at NTNU, with an apprenticeship certificate as an electrician.
+          I enjoy building systems where the software meets the real world — sensing, control and reliability.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Focus</h2>
+        <div class="small">
+          • Control & regulation (PID, tuning, filtering)<br/>
+          • Automation & robotics<br/>
+          • Embedded/IoT experiments<br/>
+          • Python & basic C/C++ experience
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="card">
+        <h2>Projects</h2>
+        <div class="projects">
+          <div class="proj">
+            <div class="title">
+              <span>Water Tank Control System</span>
+              <span class="tag">control · PLC</span>
+            </div>
+            <div class="small">
+              Designed regulators for a tank with two actuators (valve + frequency converter). Worked with tuning, filtering and practical constraints.
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="title">
+              <span>Multi-threaded Python Counter Simulation</span>
+              <span class="tag">python · concurrency</span>
+            </div>
+            <div class="small">
+              Threaded simulation with pulse generator and threads for ones/tens/hundreds. Focus on synchronization and correctness.
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="title">
+              <span>Heart Rate Wearable Comparison</span>
+              <span class="tag">stats · experiment</span>
+            </div>
+            <div class="small">
+              Compared heart-rate readings from two sports watches during low and high intensity activity. Tested measurement differences and uncertainty.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <div class="card">
+        <h2>CV snapshot</h2>
+        <div class="cv">
+          <div class="row">
+            <div class="left">NTNU — Cybernetics & Robotics</div>
+            <div class="right">BSc (in progress)</div>
+          </div>
+          <div class="row">
+            <div class="left">Teaching assistant</div>
+            <div class="right">Programming & electrical circuits</div>
+          </div>
+          <div class="row">
+            <div class="left">Apprenticeship certificate</div>
+            <div class="right">Electrician</div>
+          </div>
+        </div>
+        <p class="small" style="margin:12px 0 0;">
+          Want a full CV as PDF? Add it later as <code style="color:rgba(255,255,255,.75)">/cv/</code> and link it here.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card">
+        <h2>Contact</h2>
+        <p class="muted" style="margin:0 0 10px;">
+          Best way to reach me:
+        </p>
+        <div class="small">
+          • Email: <a href="mailto:markus@example.com">markus@example.com</a><br/>
+          • GitHub / LinkedIn above
+        </div>
+      </div>
+    </section>
 
     <footer>
-      © <script>document.write(new Date().getFullYear())</script> krogen.dev
+      <div>© <span id="y"></span> krogen.dev</div>
+      <div class="muted2">Built with GitHub + Cloudflare Pages</div>
     </footer>
   </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
