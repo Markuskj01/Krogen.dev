@@ -1,167 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Markus Krogen Jensen | krogen.dev</title>
-  <meta name="description" content="Cybernetics & Robotics @ NTNU. Building intelligent systems combining control, software and hardware." />
-  <meta name="theme-color" content="#0b0f17" />
-
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <script defer src="/assets/js/main.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Markus Krogen Jensen | krogen.dev</title>
+<link rel="stylesheet" href="/assets/css/main.css" />
+<script defer src="/assets/js/main.js"></script>
 </head>
 
-<body>
-  <div class="wrap">
-    <div class="top">
-      <div class="brand"><span class="dot"></span> krogen.dev</div>
-      <nav>
-        <a href="#projects">Projects</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+<body data-page="home">
+<div class="wrap">
+<div id="nav"></div>
 
-    <header class="hero reveal" id="top">
-      <div class="kicker">
-        <span class="pill">Cybernetics & Robotics</span>
-        <span>Automation & Intelligent Systems @ NTNU</span>
-      </div>
+<header class="card reveal">
+<h1>Markus Krogen Jensen</h1>
+<p class="muted">
+Cybernetics & Robotics student at NTNU.  
+Building systems where control theory meets real hardware.
+</p>
+<a class="btn primary" href="/projects.html">View Projects</a>
+</header>
 
-      <h1>Markus Krogen Jensen</h1>
-      <p class="sub">
-        I build practical systems that combine control theory, software and hardware.
-        Interested in automation, robotics, and reliable engineering.
-      </p>
-
-      <div class="cta">
-        <a class="btn primary" href="#projects" aria-label="Go to projects">View projects</a>
-        <a class="btn" href="#cv" aria-label="Go to CV">CV snapshot</a>
-        <!-- TODO: replace links -->
-        <a class="btn" href="https://github.com/Markuskj01" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/markuskrogenjensen" target="_blank" rel="noreferrer">LinkedIn</a>
-      </div>
-    </header>
-
-    <section class="grid">
-      <div class="card reveal">
-        <h2>About</h2>
-        <p class="muted" style="margin:0;">
-          Student in cybernetics and robotics at NTNU, with an apprenticeship certificate as an electrician.
-          I enjoy building systems where the software meets the real world — sensing, control and reliability.
-        </p>
-      </div>
-
-      <div class="card reveal">
-        <h2>Focus</h2>
-        <div class="small">
-          • Control & regulation (PID, tuning, filtering)<br/>
-          • Automation & robotics<br/>
-          • Embedded/IoT experiments<br/>
-          • Python & basic C/C++ experience
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="card reveal">
-        <h2>Projects</h2>
-        <div class="projects">
-          <div class="proj reveal">
-            <div class="title">
-              <span>Water Tank Control System</span>
-              <span class="tag">control · PLC</span>
-            </div>
-            <div class="small">
-              Designed regulators for a tank with two actuators (valve + frequency converter). Worked with tuning, filtering and practical constraints.
-            </div>
-          </div>
-
-          <div class="proj reveal">
-            <div class="title">
-              <span>Multi-threaded Python Counter Simulation</span>
-              <span class="tag">python · concurrency</span>
-            </div>
-            <div class="small">
-              Threaded simulation with pulse generator and threads for ones/tens/hundreds. Focus on synchronization and correctness.
-            </div>
-          </div>
-
-          <div class="proj reveal">
-            <div class="title">
-              <span>Heart Rate Wearable Comparison</span>
-              <span class="tag">stats · experiment</span>
-            </div>
-            <div class="small">
-              Compared heart-rate readings from two sports watches during low and high intensity activity. Tested measurement differences and uncertainty.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cv">
-      <div class="card reveal">
-        <h2>CV snapshot</h2>
-        <div class="cv">
-          <div class="row">
-            <div class="left">NTNU — Cybernetics & Robotics</div>
-            <div class="right">BSc (in progress)</div>
-          </div>
-          <div class="row">
-            <div class="left">Teaching assistant</div>
-            <div class="right">Programming & electrical circuits</div>
-          </div>
-          <div class="row">
-            <div class="left">Apprenticeship certificate</div>
-            <div class="right">Electrician</div>
-          </div>
-        </div>
-        <p class="small" style="margin:12px 0 0;">
-          Want a full CV as PDF? Add it later as <code class="inline-code">/assets/Markus-Krogen-Jensen-CV.pdf</code> and link it here.
-        </p>
-      </div>
-    </section>
-
-<section id="contact">
-  <div class="card reveal">
-    <h2>Contact</h2>
-
-    <p class="muted">
-      Best way to reach me:
-    </p>
-
-    <ul class="contact-list">
-      <li>
-        Email:
-        <a class="link" href="mailto:markuskj01@gmail.com?subject=Contact from krogen.dev">
-          markuskj01@gmail.com
-        </a>
-      </li>
-
-      <li>
-        <a class="link" href="https://github.com/Markuskj01" target="_blank" rel="noreferrer">
-          GitHub
-        </a>
-      </li>
-
-      <li>
-        <a class="link" href="https://www.linkedin.com/in/markuskrogenjensen" target="_blank" rel="noreferrer">
-          LinkedIn
-        </a>
-      </li>
-    </ul>
-  </div>
-</section>
-
-    <footer>
-      <div>© <span id="y"></span> krogen.dev</div>
-      <div class="muted2">Built with GitHub + Cloudflare Pages</div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<footer>© <span id="y"></span> krogen.dev</footer>
+</div>
 </body>
 </html>
