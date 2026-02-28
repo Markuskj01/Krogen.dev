@@ -42,7 +42,7 @@ function initReveal() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await injectComponent("#nav", "/components/nav.html");
+  await injectComponent("#nav", "components/nav.html");
   setActiveNav();
   initReveal();
 
