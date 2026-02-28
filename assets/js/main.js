@@ -1,13 +1,20 @@
 async function injectComponent(mountSelector, url) {
   const mount = document.querySelector(mountSelector);
-  if (!mount) return;
-
-  const res = await fetch(url);
-  if (!res.ok) {
-    console.warn(`Failed to load component: ${url}`);
+  if (!mount) {
+    console.warn("Mount point not found:", mountSelector);
     return;
   }
-  mount.innerHTML = await res.text();
+
+  try {
+    const res = await fetch(url);
+    if (!res.ok) {
+      console.warn("Failed to fetch:", url, res.status);
+      return;
+    }
+    mount.innerHTML = await res.text();
+  } catch (err) {
+    console.error("Fetch error:", err);
+  }
 }
 
 function setActiveNav() {
@@ -26,23 +33,25 @@ function initReveal() {
     return;
   }
 
-  const obs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-visible");
-          obs.unobserve(e.target);
-        }
-      });
-    },
-    { root: null, threshold: 0.12 }
-  );
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
 
   els.forEach(el => obs.observe(el));
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  console.log("main.js running");
+
   await injectComponent("#nav", "components/nav.html");
+
+  console.log("nav after inject:", document.querySelector("#nav")?.innerHTML);
+
   setActiveNav();
   initReveal();
 
