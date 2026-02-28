@@ -180,4 +180,14 @@ footer{
   h1{font-size:38px}
   .grid{grid-template-columns:1fr}
   nav{justify-content:flex-start}
+
+  .contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.contact-list li {
+  margin-bottom: 8px;
+}
 }
