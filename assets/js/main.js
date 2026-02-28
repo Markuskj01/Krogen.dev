@@ -1,3 +1,4 @@
+console.log("main.js loaded ✅");
 // Reveal elements on scroll using IntersectionObserver
 (() => {
   const els = document.querySelectorAll(".reveal");
