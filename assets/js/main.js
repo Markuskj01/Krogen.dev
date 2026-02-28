@@ -1,3 +1,4 @@
+alert("main.js kjører");
 async function injectComponent(mountSelector, url) {
   const mount = document.querySelector(mountSelector);
   if (!mount) {
