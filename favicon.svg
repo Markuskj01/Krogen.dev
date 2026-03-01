@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+
+  <defs>
+    <!-- Blue-to-teal gradient matching the site accent -->
+    <linearGradient id="a" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2f81f7"/>
+      <stop offset="100%" stop-color="#39d0c8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background — surface colour with rounded corners -->
+  <rect width="100" height="100" fill="#161b22" rx="16"/>
+
+  <!-- Top accent bar: blue → teal, mirrors the card accent on the site -->
+  <rect x="18" y="8" width="64" height="3.5" fill="url(#a)" rx="1.75"/>
+
+  <!-- Initials -->
+  <text
+    x="50" y="64"
+    font-family="'Space Grotesk', system-ui, -apple-system, sans-serif"
+    font-size="34"
+    font-weight="700"
+    fill="#e6edf3"
+    text-anchor="middle"
+    letter-spacing="1">MKJ</text>
+
+</svg>

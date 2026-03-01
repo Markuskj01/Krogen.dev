@@ -1,0 +1,6 @@
+# Cloudflare Pages redirect rules
+# Block project/config files from being publicly accessible
+/CLAUDE.md          /       301
+/og-image.html      /       301
+/.claude            /       301
+/.claude/*          /       301
