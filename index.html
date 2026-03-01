@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO & Open Graph -->
+    <meta name="description" content="Elektriker med fagbrev og ingeniørstudent innen kybernetikk og robotikk ved NTNU. Kobler praktisk automasjon med reguleringsteknikk. Søker internship eller juniorrolle." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://krogen.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Markus Krogen Jensen" />
+    <meta property="og:url" content="https://krogen.dev/" />
+    <meta property="og:title" content="Markus Krogen Jensen — Cybernetics & Robotics, NTNU" />
+    <meta property="og:description" content="Engineering student in cybernetics and robotics at NTNU, with a trade background as a certified electrician. Bridging control theory and industrial automation. Open to internships and junior engineering roles." />
+    <meta property="og:image" content="https://krogen.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <title>Markus Krogen Jensen — Kybernetikk og robotikk, NTNU</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- =====================
+         NAVIGATION
+    ===================== -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav__inner">
+
+          <!-- Hamburger — left side on mobile, hidden on desktop (768px+).
+               Placed before .nav__links so it anchors to the left edge.
+               JS toggles aria-expanded and .open on .nav__mobile. -->
+          <!-- type="button" prevents iOS Safari from treating this as a submit button -->
+          <button
+            type="button"
+            class="nav__hamburger"
+            aria-label="Åpne meny"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <!-- Desktop nav links — hidden on mobile via CSS -->
+          <ul class="nav__links">
+            <li><a class="nav__link nav__link--active" href="index.html" data-no="Hjem" data-en="Home">Hjem</a></li>
+            <li><a class="nav__link" href="cv.html" data-no="CV" data-en="CV">CV</a></li>
+            <li><a class="nav__link" href="projects.html" data-no="Prosjekter" data-en="Projects">Prosjekter</a></li>
+          </ul>
+
+          <!-- Right side: language toggle only (hamburger moved to left) -->
+          <div class="nav__controls">
+            <button type="button" class="lang-toggle" aria-label="Switch to English">EN</button>
+          </div>
+
+        </div><!-- /.nav__inner -->
+
+        <!-- Mobile dropdown — JS adds/removes .open -->
+        <div class="nav__mobile" id="mobile-menu" role="dialog" aria-label="Navigasjon">
+          <ul>
+            <li><a class="nav__link nav__link--active" href="index.html" data-no="Hjem" data-en="Home">Hjem</a></li>
+            <li><a class="nav__link" href="cv.html" data-no="CV" data-en="CV">CV</a></li>
+            <li><a class="nav__link" href="projects.html" data-no="Prosjekter" data-en="Projects">Prosjekter</a></li>
+          </ul>
+        </div><!-- /.nav__mobile -->
+
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- =====================
+           HERO SECTION
+      ===================== -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero__inner container">
+          <p class="hero__eyebrow" data-no="Hei, jeg er" data-en="Hi, I'm">Hei, jeg er</p>
+          <h1 class="hero__name" id="hero-heading">Markus Krogen Jensen</h1>
+          <p class="hero__title" data-no="Ingeniørstudent, Automatisering og intelligente systemer — NTNU" data-en="Engineering Student, Automation and Intelligent Systems — NTNU">Ingeniørstudent, Automatisering og intelligente systemer — NTNU</p>
+          <!-- Primary intro — uses wrapper classes because text differs enough between languages -->
+          <div class="hero__intro">
+            <div class="lang-no">
+              <p>Jeg kombinerer praktisk bakgrunn som elektriker med studier innen automasjon og intelligente systemer ved NTNU. Til daglig jobber jeg med systemer som kobler reguleringsteknikk til ekte industriell maskinvare. Jeg ser etter et internship eller en ingeniørstilling der jeg kan bidra fra første dag.</p>
+            </div>
+            <div class="lang-en" hidden>
+              <p>I combine a trade background as a certified electrician with university studies in automation and intelligent systems at NTNU. My work focuses on systems that bridge control theory with real industrial hardware. I am looking for an internship or engineering role where I can contribute from day one.</p>
+            </div>
+          </div>
+          <!-- Primary CTAs -->
+          <div class="hero__cta-group">
+            <a class="btn btn--primary" href="projects.html" data-no="Se prosjektene" data-en="See projects">Se prosjektene</a>
+            <a class="btn btn--secondary" href="mailto:Markuskj01&#64;gmail&#46;com" data-no="Ta kontakt" data-en="Get in touch">Ta kontakt</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================
+           SKILLS SNAPSHOT
+      ===================== -->
+      <section class="skills" aria-labelledby="skills-heading">
+        <div class="container">
+          <h2 class="section-title" id="skills-heading" data-no="Hva jeg jobber med" data-en="What I work with">Hva jeg jobber med</h2>
+          <p class="section-subtitle" data-no="Et øyeblikksbilde av fagområdene jeg bruker mest tid på." data-en="A snapshot of the areas I spend most of my time on.">Et øyeblikksbilde av fagområdene jeg bruker mest tid på.</p>
+
+          <ul class="skills__grid" role="list">
+
+            <!-- Skill card 1 -->
+            <li class="skill-card">
+              <div class="skill-card__icon" aria-hidden="true">⚙️</div>
+              <h3 class="skill-card__title" data-no="Industriell automasjon" data-en="Industrial Automation">Industriell automasjon</h3>
+              <p class="skill-card__body" data-no="Installasjon, drift og vedlikehold av automatiserte systemer i industribygg. Praktisk erfaring fra Bravida." data-en="Installation, operation and maintenance of automated systems in industrial buildings. Hands-on experience from Bravida.">Installasjon, drift og vedlikehold av automatiserte systemer i industribygg. Praktisk erfaring fra Bravida.</p>
+            </li>
+
+            <!-- Skill card 2 -->
+            <li class="skill-card">
+              <div class="skill-card__icon" aria-hidden="true">💻</div>
+              <h3 class="skill-card__title" data-no="Programmering" data-en="Programming">Programmering</h3>
+              <p class="skill-card__body" data-no="MATLAB for simulering og regulering, Python for databehandling og scripting, C++ for ytelseskritisk kode." data-en="MATLAB for simulation and control, Python for data processing and scripting, C++ for performance-critical code.">MATLAB for simulering og regulering, Python for databehandling og scripting, C++ for ytelseskritisk kode.</p>
+            </li>
+
+            <!-- Skill card 3 -->
+            <li class="skill-card">
+              <div class="skill-card__icon" aria-hidden="true">👥</div>
+              <h3 class="skill-card__title" data-no="Ledelse og teamarbeid" data-en="Leadership &amp; Teamwork">Ledelse og teamarbeid</h3>
+              <p class="skill-card__body" data-no="Erfaring fra ledelse av team i industri og frivillig organisasjon. Vant til ansvar og dialog med kunder og fagmiljø." data-en="Experience leading teams in industry and voluntary organisations. Comfortable with responsibility and dialogue with clients and stakeholders.">Erfaring fra ledelse av team i industri og frivillig organisasjon. Vant til ansvar og dialog med kunder og fagmiljø.</p>
+            </li>
+
+            <!-- Skill card 4 -->
+            <li class="skill-card">
+              <div class="skill-card__icon" aria-hidden="true">🔌</div>
+              <h3 class="skill-card__title" data-no="Kybernetikk og regulering" data-en="Control &amp; Cybernetics">Kybernetikk og regulering</h3>
+              <p class="skill-card__body" data-no="Studerer reguleringsteknikk, maskinlæring og robotikk ved NTNU med fordypning i kybernetikk og robotikk." data-en="Studying control theory, machine learning and robotics at NTNU with a specialisation in cybernetics and robotics.">Studerer reguleringsteknikk, maskinlæring og robotikk ved NTNU med fordypning i kybernetikk og robotikk.</p>
+            </li>
+
+          </ul>
+        </div>
+      </section>
+
+      <!-- =====================
+           CALL TO ACTION STRIP
+      ===================== -->
+      <section class="cta-strip" aria-labelledby="cta-heading">
+        <div class="container cta-strip__inner">
+          <h2 class="cta-strip__heading" id="cta-heading" data-no="Vil du se arbeidet?" data-en="Want to see the work?">Vil du se arbeidet?</h2>
+          <p class="cta-strip__body" data-no="Jeg har jobbet med PLS-regulering, industriautomasjon og reguleringsteknikk. Se prosjektene eller ta kontakt direkte." data-en="I have worked on PLC control, industrial automation and control systems. Check out the projects or get in touch directly.">Jeg har jobbet med PLS-regulering, industriautomasjon og reguleringsteknikk. Se prosjektene eller ta kontakt direkte.</p>
+          <div class="cta-strip__actions">
+            <a class="btn btn--primary" href="projects.html" data-no="Se prosjekter" data-en="View projects">Se prosjekter</a>
+            <a class="btn btn--ghost" href="cv.html" data-no="Les CV" data-en="Read CV">Les CV</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =====================
+         FOOTER
+    ===================== -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <!-- Contact / social links -->
+        <div class="site-footer__links">
+          <a class="btn btn--ghost btn--sm" href="mailto:Markuskj01&#64;gmail&#46;com">
+            <span data-no="E-post" data-en="Email">E-post</span>
+          </a>
+          <a class="btn btn--ghost btn--sm" href="https://www.linkedin.com/in/markuskrogenjensen/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a class="btn btn--ghost btn--sm" href="https://github.com/Markuskj01" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
+        <p class="site-footer__copy" data-no="© 2026 Markus Krogen Jensen" data-en="© 2026 Markus Krogen Jensen">&copy; 2026 Markus Krogen Jensen</p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
