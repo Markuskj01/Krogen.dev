@@ -31,11 +31,6 @@
     <header class="site-header">
       <nav class="nav" aria-label="Main navigation">
         <div class="nav__inner">
-
-          <!-- Hamburger — left side on mobile, hidden on desktop (768px+).
-               Placed before .nav__links so it anchors to the left edge.
-               JS toggles aria-expanded and .open on .nav__mobile. -->
-          <!-- type="button" prevents iOS Safari from treating this as a submit button -->
           <button
             type="button"
             class="nav__hamburger"
@@ -48,31 +43,24 @@
             <span></span>
           </button>
 
-          <!-- Desktop nav links — hidden on mobile via CSS.
-               Paths go up one level (../) because this page is under projects/. -->
           <ul class="nav__links">
             <li><a class="nav__link" href="../index.html" data-no="Hjem" data-en="Home">Hjem</a></li>
             <li><a class="nav__link" href="../cv.html" data-no="CV" data-en="CV">CV</a></li>
-            <!-- Prosjekter marked active since we're on a project subpage -->
             <li><a class="nav__link nav__link--active" href="../projects.html" data-no="Prosjekter" data-en="Projects">Prosjekter</a></li>
           </ul>
 
-          <!-- Right side: language toggle only (hamburger is on the left) -->
           <div class="nav__controls">
             <button type="button" class="lang-toggle" aria-label="Switch to English">EN</button>
           </div>
+        </div>
 
-        </div><!-- /.nav__inner -->
-
-        <!-- Mobile dropdown — JS adds/removes .open -->
         <div class="nav__mobile" id="mobile-menu" role="dialog" aria-label="Navigasjon">
           <ul>
             <li><a class="nav__link" href="../index.html" data-no="Hjem" data-en="Home">Hjem</a></li>
             <li><a class="nav__link" href="../cv.html" data-no="CV" data-en="CV">CV</a></li>
             <li><a class="nav__link nav__link--active" href="../projects.html" data-no="Prosjekter" data-en="Projects">Prosjekter</a></li>
           </ul>
-        </div><!-- /.nav__mobile -->
-
+        </div>
       </nav>
     </header>
 
@@ -93,21 +81,19 @@
 
       <!-- =====================
            HERO IMAGE
-           PLACEHOLDER: Replace the .placeholder-image div with a real <img> tag.
-           Suggested size: 1200×600px. Add alt text describing the project setup.
       ===================== -->
-        <section class="project-hero">
-          <div class="container">
-            <img
-              src="images/IMG_1351-2.jpg"
-              alt="Vanntanksystem med PLS, frekvensomformer og reguleringsventil"
-              class="project-hero__img"
-              width="4284"
-              height="4281"
-              loading="eager"
-            />
-          </div>
-        </section>
+      <section class="project-hero">
+        <div class="container">
+          <img
+            src="images/IMG_1351-2.jpg"
+            alt="Vanntanksystem med PLS-rigg, frekvensomformer, reguleringsventil og tankrigg"
+            class="project-hero__img"
+            width="4284"
+            height="4281"
+            loading="eager"
+          />
+        </div>
+      </section>
 
       <!-- =====================
            PROJECT HEADER
@@ -120,64 +106,137 @@
               data-en="PLC Control of Water Tank">
             PLS-regulering av vanntank
           </h1>
-          <!-- Tech stack tags -->
           <ul class="project-detail__tags tags" aria-label="Teknologier brukt">
             <li class="tag">PLS / PLC</li>
-            <li class="tag">Reguleringsteknikk / Control Theory</li>
+            <li class="tag">GX Works 2</li>
+            <li class="tag">PROFIBUS</li>
+            <li class="tag">PID-regulering</li>
             <li class="tag">MATLAB / Simulink</li>
-            <li class="tag">PID</li>
+            <li class="tag">InTouch SCADA</li>
+            <li class="tag">iX Developer HMI</li>
           </ul>
         </header>
 
         <!-- =====================
-             OVERVIEW / DESCRIPTION
+             OVERVIEW
         ===================== -->
         <section class="project-section" aria-labelledby="overview-heading">
           <h2 class="project-section__title" id="overview-heading"
               data-no="Oversikt" data-en="Overview">Oversikt</h2>
           <div class="lang-no">
-            <p>Semesteroppgave i reguleringsteknikk ved NTNU. Prosjektet gikk ut på å programmere og
-              regulere et vanntanksystem ved hjelp av PLS (programmerbar logikkstyring). Systemet besto
-              av en pumpe med frekvensomformer, en reguleringsventil og nivåmåling i tanken. Målet var
-              å holde vannivået stabilt på et gitt settpunkt til tross for forstyrrelser.</p>
-            <!-- PLACEHOLDER: Legg til kontekst om kurset eller gruppen her -->
-            <p class="project-section__placeholder">[ PLACEHOLDER: Legg til informasjon om kurs, semester og eventuell gruppe her ]</p>
+            <p>Semesteroppgave i automatiseringsteknikk (IELET2104) ved NTNU. Prosjektet gikk ut på å utvikle et komplett automatisert reguleringssystem for nivåkontroll av en tankprosess. Systemet ble implementert på en rigg bestående av én master-PLS og to slave-PLSer, koblet sammen via PROFIBUS. Riggen kommuniserte med en separat tankrigg utstyrt med frekvensomformer, elektrisk reguleringsventil, trykkmåler, strømningsmåler og magnetventiler.</p>
+            <p>Målet var å holde vannivået stabilt på et gitt settpunkt til tross for forstyrrelser, med rask respons ved referanseendringer. Systemet støtter to reguleringsmoduser — én med frekvensomformer som pådragsorgan og én med reguleringsventil — og kan bytte sømløst mellom disse.</p>
           </div>
           <div class="lang-en" hidden>
-            <p>Semester project in control theory at NTNU. The project involved programming and
-              controlling a water tank system using a PLC (Programmable Logic Controller). The system
-              consisted of a pump with a frequency converter, a control valve, and level measurement
-              in the tank. The goal was to maintain a stable water level at a given setpoint despite
-              disturbances.</p>
-            <p class="project-section__placeholder">[ PLACEHOLDER: Add context about the course, semester and any group members here ]</p>
+            <p>Semester project in automation engineering (IELET2104) at NTNU. The project involved developing a complete automated control system for level control of a tank process. The system was implemented on a rig consisting of one master PLC and two slave PLCs, interconnected via PROFIBUS. The rig communicated with a separate tank rig equipped with a variable frequency drive, an electric control valve, a pressure sensor, a flow meter, and solenoid valves.</p>
+            <p>The objective was to maintain a stable water level at a given setpoint despite disturbances, with fast response to reference changes. The system supports two control modes — one using the frequency converter as the actuator and one using the control valve — and can switch seamlessly between them.</p>
           </div>
         </section>
 
         <!-- =====================
-             WHAT WAS BUILT
+             COMMUNICATION & ARCHITECTURE
         ===================== -->
-        <section class="project-section" aria-labelledby="built-heading">
-          <h2 class="project-section__title" id="built-heading"
-              data-no="Hva ble bygget" data-en="What was built">Hva ble bygget</h2>
+        <section class="project-section" aria-labelledby="comm-heading">
+          <h2 class="project-section__title" id="comm-heading"
+              data-no="Kommunikasjon og arkitektur" data-en="Communication and architecture">Kommunikasjon og arkitektur</h2>
           <div class="lang-no">
             <ul class="project-section__list">
-              <li>PID-regulator implementert i PLS for automatisk nivåregulering</li>
-              <li>Frekvensomformer brukt til å styre pumpehastigheten som manipulert variabel</li>
-              <li>Reguleringsventil kontrollerte utstrøm fra tanken</li>
-              <li>Nivåsensor (trykksensor / nivåmåler) som prosesstransducer</li>
-              <li>Simulering av systemet i MATLAB/Simulink for å verifisere regulatorparametere</li>
-              <!-- PLACEHOLDER: Legg til flere detaljer om implementasjonen -->
-              <li class="project-section__placeholder">[ PLACEHOLDER: Legg til flere tekniske detaljer ]</li>
+              <li>Master-PLS koblet til to slave-PLSer via PROFIBUS, konfigurert med GX Configurator DP. Hver slave sender og mottar opptil 16 dataregistre.</li>
+              <li>Parameterindeksering implementert for å overføre mer enn 16 parametere fra master til slave — en felles Parameter- og ParameterID-verdi sendes i samme register, noe som støtter opptil 60 parameterverdier totalt.</li>
+              <li>Alle parameterverdier lagres i slave 1, som har batterimatede dataregistre. Dette sikrer at parametere bevares ved strømbrudd og automatisk initialiseres tilbake til master ved oppstart.</li>
+              <li>Kommunikasjon med tankrigg via AD/DA-moduler og spenningssignaler (0–10 V) over 12-bits signalomfang.</li>
+              <li>Master koblet til operatørpanel (iX Developer) og SCADA (InTouch via KEPServerEX) gjennom Ethernet-modul og intern ruter. Begge grensesnitt er fullt synkronisert, inkludert alarmkvittering.</li>
             </ul>
           </div>
           <div class="lang-en" hidden>
             <ul class="project-section__list">
-              <li>PID controller implemented in PLC for automatic level control</li>
-              <li>Frequency converter used to control pump speed as the manipulated variable</li>
-              <li>Control valve managed outflow from the tank</li>
-              <li>Level sensor (pressure / level transducer) as process sensor</li>
-              <li>System simulation in MATLAB/Simulink to verify controller parameters</li>
-              <li class="project-section__placeholder">[ PLACEHOLDER: Add more technical details ]</li>
+              <li>Master PLC connected to two slave PLCs via PROFIBUS, configured using GX Configurator DP. Each slave sends and receives up to 16 data registers.</li>
+              <li>Parameter indexing implemented to transfer more than 16 parameters from master to slave — a shared Parameter and ParameterID value is sent in the same register, supporting up to 60 parameter values in total.</li>
+              <li>All parameter values are stored in Slave 1, which has battery-backed data registers. This ensures parameters are preserved during power failures and automatically re-initialised to the master on startup.</li>
+              <li>Communication with the tank rig via AD/DA modules and voltage signals (0–10 V) over a 12-bit signal range.</li>
+              <li>Master connected to operator panel (iX Developer) and SCADA (InTouch via KEPServerEX) through an Ethernet module and internal router. Both interfaces are fully synchronised, including alarm acknowledgement.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- =====================
+             CONTROL STRATEGY
+        ===================== -->
+        <section class="project-section" aria-labelledby="control-heading">
+          <h2 class="project-section__title" id="control-heading"
+              data-no="Reguleringsstrategi" data-en="Control strategy">Reguleringsstrategi</h2>
+          <div class="lang-no">
+            <ul class="project-section__list">
+              <li>PI-regulator for frekvensomformeren — systemet responderer raskt med liten oversvinningsfare, slik at D-leddet ikke er nødvendig. Parametere bestemt ved frekvensanalyse og sprangrespons: Kp = 3.0, Ti = 45 s.</li>
+              <li>PID-regulator for ventilen — D-leddet er kritisk grunnet ventilens fysiske treghet, hysterese og dødsone. Parametere bestemt eksperimentelt: Kp = 3.5, Ti = 60 s, Td = 3 s.</li>
+              <li>Lead-lag-element som foroverkobling fra forstyrrelsessignalet (utstrømning) for frekvensomformeren, for raskere kompensasjon av kjente forstyrrelser.</li>
+              <li>Andreordens lavpassfilter på referansesignalet for jevn S-kurveovergang uten harde akselerasjoner, innstilt med kritisk demping og naturlig frekvens 1.5 rad/s.</li>
+              <li>Førsteordens lavpassfiltre på målte signaler (tidskonstant 1.5 s) for å redusere støy fra turbulent innstrømning uten å innføre vesentlig tidsforsinkelse.</li>
+              <li>Midlingsfilter over 15 målinger på trykksignalet for stabile og lesbare verdier i HMI/SCADA.</li>
+              <li>Ratebegrensning på begge pådrageorganer for å begrense fysisk slitasje og hindre overjusteringer. Tastetid satt til 100 ms fast scanningintervall.</li>
+              <li>Anti-windup (tracking) implementert i integralleddet for å forhindre oppbygging av integralfeil ved metning.</li>
+            </ul>
+          </div>
+          <div class="lang-en" hidden>
+            <ul class="project-section__list">
+              <li>PI controller for the frequency converter — the system responds quickly with little risk of overshoot, making the D-term unnecessary. Parameters determined via frequency analysis and step response: Kp = 3.0, Ti = 45 s.</li>
+              <li>PID controller for the valve — the D-term is critical due to the valve's physical lag, hysteresis, and dead zone. Parameters determined experimentally: Kp = 3.5, Ti = 60 s, Td = 3 s.</li>
+              <li>Lead-lag feed-forward element from the disturbance signal (outflow) for the frequency converter, enabling faster compensation of known disturbances.</li>
+              <li>Second-order low-pass filter on the reference signal for smooth S-curve transitions without hard accelerations, tuned with critical damping and natural frequency 1.5 rad/s.</li>
+              <li>First-order low-pass filters on measured signals (time constant 1.5 s) to reduce noise from turbulent inflow without introducing significant delay.</li>
+              <li>Moving average filter over 15 samples on the pressure signal for stable and readable values in HMI/SCADA.</li>
+              <li>Rate limiting on both actuators to reduce physical wear and prevent overshoot. Sample time set to a fixed 100 ms scan interval.</li>
+              <li>Anti-windup (tracking) implemented in the integral term to prevent integrator wind-up during saturation.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- =====================
+             SEQUENCE LOGIC
+        ===================== -->
+        <section class="project-section" aria-labelledby="seq-heading">
+          <h2 class="project-section__title" id="seq-heading"
+              data-no="Sekvenslogikk og sikkerhet" data-en="Sequence logic and safety">Sekvenslogikk og sikkerhet</h2>
+          <div class="lang-no">
+            <ul class="project-section__list">
+              <li>Sekvensstyrt oppstart: systemet initialiserer alltid i steg 0 etter strømbrudd. Tanken tømmes til under 60 % (steg 1), deretter etableres laminær innstrømning ved 40 Hz (steg 2), før regulering aktiveres (steg 3).</li>
+              <li>For å sikre laminær flyt i starten av reguleringsfasen sendes en midlertidig fastverdi til pådragsorganet i de første 14 sekundene av steg 3, slik at regulatoren ikke sender for lavt pådrag før systemet er stabilt.</li>
+              <li>Feilhåndtering via steg 4 og 5 ved kritiske alarmer — tanknivået bringes tilbake til 50 % før systemet returnerer til initialisering.</li>
+              <li>Anti-lekking-protokoll i steg 0: magnetventilene åpnes periodisk i 0.2 sekunder hvert 7. sekund dersom lekkasje oppdages, for å forsøke å stoppe utstrømning.</li>
+              <li>To alarmnivåer: alarm (Hi >80 %, Lo <20 %, avvik >10 % i >60 s) og kritisk alarm (HiHi >90 %, LoLo <10 %). Alle alarmer krever manuell kvittering fra HMI eller SCADA.</li>
+            </ul>
+          </div>
+          <div class="lang-en" hidden>
+            <ul class="project-section__list">
+              <li>Sequence-controlled startup: the system always initialises in step 0 after a power failure. The tank is drained below 60% (step 1), laminar inflow is then established at 40 Hz (step 2), before control is activated (step 3).</li>
+              <li>To ensure laminar flow at the start of the control phase, a temporary fixed value is sent to the actuator for the first 14 seconds of step 3, preventing the controller from outputting too low a setpoint before the system is stable.</li>
+              <li>Fault handling via steps 4 and 5 on critical alarms — the tank level is brought back to 50% before the system returns to initialisation.</li>
+              <li>Anti-leak protocol in step 0: solenoid valves are opened periodically for 0.2 seconds every 7 seconds if leakage is detected, in an attempt to stop outflow.</li>
+              <li>Two alarm levels: alarm (Hi >80%, Lo <20%, deviation >10% for >60 s) and critical alarm (HiHi >90%, LoLo <10%). All alarms require manual acknowledgement from HMI or SCADA.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- =====================
+             HMI & SCADA
+        ===================== -->
+        <section class="project-section" aria-labelledby="hmi-heading">
+          <h2 class="project-section__title" id="hmi-heading"
+              data-no="Brukergrensesnitt" data-en="User interface">Brukergrensesnitt</h2>
+          <div class="lang-no">
+            <ul class="project-section__list">
+              <li>SCADA-system utviklet i InTouch med rollebasert tilgangskontroll (3 operatørnivåer). Operatør 3 har full tilgang til alle parametere og regulatorinnstillinger, mens operatør 1 kun kan lese prosessdata og justere referansen.</li>
+              <li>Lokalt operatørpanel utviklet i iX Developer (TA100) med tre sider: Hjem, Trend og Alarm — utformet for enkel og oversiktlig kontroll direkte på riggen uten behov for PC.</li>
+              <li>Begge grensesnitt er utviklet etter High Performance HMI-prinsipper: grå bakgrunn, begrenset fargebruk, ingen unødvendige animasjoner, analog visualisering av kritiske verdier.</li>
+              <li>Sanntids- og historiske trender, alarmlogg med CSV-eksport, og synkronisert alarmkvittering mellom HMI og SCADA.</li>
+            </ul>
+          </div>
+          <div class="lang-en" hidden>
+            <ul class="project-section__list">
+              <li>SCADA system developed in InTouch with role-based access control (3 operator levels). Operator 3 has full access to all parameters and controller settings, while Operator 1 can only read process data and adjust the setpoint.</li>
+              <li>Local operator panel developed in iX Developer (TA100) with three screens: Home, Trend, and Alarm — designed for simple and clear control directly on the rig without needing a PC.</li>
+              <li>Both interfaces were developed following High Performance HMI principles: grey background, limited use of colour, no unnecessary animations, and analogue visualisation of critical values.</li>
+              <li>Real-time and historical trends, alarm log with CSV export, and synchronised alarm acknowledgement between HMI and SCADA.</li>
             </ul>
           </div>
         </section>
@@ -190,31 +249,25 @@
               data-no="Hva ble lært" data-en="What was learned">Hva ble lært</h2>
           <div class="lang-no">
             <ul class="project-section__list">
-              <li>Praktisk erfaring med PLS-programmering og reguleringsteknikk</li>
-              <li>Sammenheng mellom teoretisk PID-design og praktisk implementasjon på ekte hardware</li>
-              <li>Frekvensomformerens rolle i hastighetsstyring av pumper</li>
-              <li>Viktigheten av sensorkalibrering og støyhåndtering i målekretser</li>
-              <li>Tuning av PID-parametere (P, I, D) gjennom eksperimentell testing</li>
-              <!-- PLACEHOLDER: Legg til personlige refleksjoner -->
-              <li class="project-section__placeholder">[ PLACEHOLDER: Legg til egne refleksjoner rundt prosjektet ]</li>
+              <li>Praktisk erfaring med PLS-programmering i GX Works 2 — Ladderdiagram og C-kode — og oppbygging av modulære funksjonsblokker for regulering, filtrering og logikk.</li>
+              <li>Sammenhengen mellom teoretisk PID-design (frekvensanalyse, sprangrespons, modellering) og praktisk implementasjon og tuning på ekte hardware.</li>
+              <li>Diskretisering av kontinuerlige regulator- og filterstrukturer ved bakoverdifferanse og bilineær transformasjon, og hvordan valg av metode påvirker stabilitet og dynamikk.</li>
+              <li>Kompleksiteten ved å regulere et system med fysiske begrensninger — ventilens hysterese, treghet og dødsone krevde annen tilnærming enn frekvensomformeren.</li>
+              <li>Viktigheten av god systemarkitektur: batterilagret minne i slave 1 som eneste pålitelige lagringsplass, og parameterindeksering for å omgå begrensninger i kommunikasjonsprotokollen.</li>
+              <li>Design og implementasjon av HMI/SCADA etter High Performance-prinsipper, med rollebasert tilgangskontroll og synkronisering på tvers av grensesnitt.</li>
             </ul>
           </div>
           <div class="lang-en" hidden>
             <ul class="project-section__list">
-              <li>Practical experience with PLC programming and control theory</li>
-              <li>Understanding the link between theoretical PID design and real hardware implementation</li>
-              <li>The role of frequency converters in pump speed control</li>
-              <li>The importance of sensor calibration and noise handling in measurement circuits</li>
-              <li>Tuning PID parameters (P, I, D) through experimental testing</li>
-              <li class="project-section__placeholder">[ PLACEHOLDER: Add personal reflections on the project ]</li>
+              <li>Practical experience with PLC programming in GX Works 2 — Ladder diagrams and C code — and building modular function blocks for control, filtering, and logic.</li>
+              <li>The relationship between theoretical PID design (frequency analysis, step response, modelling) and practical implementation and tuning on real hardware.</li>
+              <li>Discretisation of continuous controller and filter structures using backward difference and bilinear transformation, and how the choice of method affects stability and dynamics.</li>
+              <li>The complexity of controlling a system with physical limitations — the valve's hysteresis, lag, and dead zone required a different approach than the frequency converter.</li>
+              <li>The importance of good system architecture: battery-backed memory in Slave 1 as the only reliable storage, and parameter indexing to work around protocol limitations.</li>
+              <li>Design and implementation of HMI/SCADA following High Performance principles, with role-based access control and synchronisation across interfaces.</li>
             </ul>
           </div>
         </section>
-
-        <!-- =====================
-             REPORT / LINKS
-             PLACEHOLDER: Replace href="#" with real report or repo URL
-        ===================== -->
 
       </div><!-- end .project-detail -->
 
