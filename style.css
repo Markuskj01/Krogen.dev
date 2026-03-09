@@ -2295,6 +2295,13 @@ main {
   padding-block: var(--space-6);
 }
 
+.project-hero__img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
 /* Placeholder image — dashed border box shown until a real image is added.
    PLACEHOLDER: Replace .placeholder-image div with an <img> tag when ready. */
 .placeholder-image {
